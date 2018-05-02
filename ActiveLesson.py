@@ -22,7 +22,7 @@ x_set = {1, 2, 5, 7, 10, 8, 10}
 
 
 # --------------------------------------
-# chapter 8
+# chapter 8 lesson 2
 # Lists and Tuples
 
 def main_8_2():
@@ -49,4 +49,31 @@ def print_list(o):
         print(i, end=' ', flush=True)
     print()
 
-if __name__=='__main__': main_8_2()
+# if __name__=='__main__': main_8_2()
+
+# --------------------------------------
+# chapter 8 lesson 3
+# Dictionaries
+
+def main_8_3():
+    # the code for lesson 3 in chapter 8
+    animals = dict(kitten='meow', puppy='ruff', lion='grrrr', giraffe='I am a girrafe!', dragon='rawr')
+    # animals = {'kitten': 'meow', 'puppy': 'ruff', 'lion': 'grrrr'
+    #             , 'giraffe': 'I am a girrafe!', 'dragon': 'rawr'}
+    
+    animals['lion']='I am a lion!' # change the lion value
+    animals['monkey']='haha'
+    # print(animals['godzilla']) # exception is raised = KeyError when the key does not exists in the dictionary
+    print(animals.get('godzilla')) # no exception is raised if the key doesn't exist
+    print(animals.get('lion')) # no exception is raised if the key doesn't exist
+    # for k in animals.keys(): print(k)
+    # print()
+    # for v in animals.values(): print(v)
+    # print()
+    # print_dict(animals)
+
+def print_dict(o):
+    for x in o:
+        print(f'{x}: {o[x]}') # the dictionary in outputted as a list element with syntax: o[x]
+
+if __name__=='__main__': main_8_3()
