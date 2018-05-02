@@ -102,3 +102,7 @@ def print_set(pSet):
     print('}')
 
 if __name__=='__main__': main_8_4()
+
+# --------------------------------------
+# chapter 8 lesson 5
+# List Comprehension
