@@ -1,5 +1,5 @@
 
-# python
+# python and github
 # learning the basics of the Python from Lynda (lynda.com)
 # also learning git
 
