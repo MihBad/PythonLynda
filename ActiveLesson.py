@@ -76,4 +76,29 @@ def print_dict(o):
     for x in o:
         print(f'{x}: {o[x]}') # the dictionary in outputted as a list element with syntax: o[x]
 
-if __name__=='__main__': main_8_3()
+# if __name__=='__main__': main_8_3()
+
+# --------------------------------------
+# chapter 8 lesson 4
+# Sets
+
+def main_8_4():
+    # the code for lesson 4 in chapter 8
+    a = set('abcde')
+    b = set('defgh')
+    # print_set(sorted(a))
+    # print_set(sorted(b))
+    print_set(sorted(a-b)) # members from set a but not in set b
+    print_set(sorted(b-a)) # members in b but not in a
+    print_set(sorted(a|b)) # members in a or b
+    print_set(sorted(a^b)) # members that are in a or b
+    print_set(sorted(a&b)) # members that are in both a and b
+
+def print_set(pSet):
+    # print a set easily
+    print('{', end='')
+    for oneSet in pSet:
+        print(f'{oneSet}', end='', flush=True)
+    print('}')
+
+if __name__=='__main__': main_8_4()
