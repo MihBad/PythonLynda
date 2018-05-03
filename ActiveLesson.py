@@ -101,8 +101,34 @@ def print_set(pSet):
         print(f'{oneSet}', end='', flush=True)
     print('}')
 
-if __name__=='__main__': main_8_4()
+# if __name__=='__main__': main_8_4()
 
 # --------------------------------------
 # chapter 8 lesson 5
 # List Comprehension
+
+def main_8_5():
+    # function for the lesson 5 in chapter 8
+    from math import pi
+    seq = range(11)
+    seq2 = [x for x in seq if x % 3 != 0] # this will be the double of the elements in x
+    seq2_2 = [(x, x**2) for x in seq] # a new list with tuples for each x element and x squared
+    seq2_fib = [(x, x) for x in seq] # should be the fibonacci sequence but I can't make it on one line
+    seq2_rounding_to_pi = [round(pi, i1) for i1 in seq] # round pi to i number of digits
+    seq2_dict={i2:round(pi, i2) for i2 in seq}
+    seq_set = {x for x in 'superduper' if x not in 'pd'}
+    print_list_85(seq)
+    print_list_85(seq2)
+    print_list_85(seq2_2)
+    print_list_85(seq2_rounding_to_pi)
+    print(seq2_dict)
+    print(seq_set)
+    print_list_85(sorted(seq_set))
+
+
+def print_list_85(o):
+    for x in o:
+        print(x, end=' ')
+    print()
+
+if __name__=='__main__': main_8_5()
