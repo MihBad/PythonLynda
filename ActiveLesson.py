@@ -131,4 +131,64 @@ def print_list_85(o):
         print(x, end=' ')
     print()
 
-if __name__=='__main__': main_8_5()
+# if __name__=='__main__': main_8_5()
+
+
+# --------------------------------------
+# chapter 8 lesson 6
+# Mixed Structures
+# incomplete due to repetitive tasks - easy to understand
+
+# globals
+dlevel=0 # manage nesting level
+
+def main_8_6():
+    # code for lesson 6 in chapter 8
+    r=range(11)
+    l=[1, 'two', 3, {'4': 'four'}, 5]
+    t=('one', 'two', None, 'four', 'five')
+    s=set("It's a bird! It's a plane! It's Superman!")
+    d=dict(one=r, two=l, three=s)
+    mixed=[l, r, s, d, t]
+    disp(mixed)
+
+def disp(o):
+    global dlevel
+
+    dlevel += 1
+    if isinstance(o, list):
+        print_list_86(o)
+    elif isinstance(o, range):
+        print_range_86(o)
+    # elif isinstance(o, tuple):
+    #     print_tuple_86(o)
+    # elif isinstance(o, set):
+    #     print_set_86(o)
+    # elif isinstance(o, dict):
+    #     print_dict_86(o)
+    elif o is None:
+        print('Nada', end=' ', flush=True) 
+    else:
+        print(repr(o), end=' ', flush=True)
+    dlevel -= 1
+
+    if dlevel <=1:
+        print() # new line after outer
+
+def print_list_86(parList):
+    if len(parList)==0:
+        print('The list is empty.')
+    else:
+        print('The list items are:', end=' ')
+        for itemList in parList:
+            disp(itemList)
+
+def print_range_86(parRange):
+    if len(parRange)==0:
+        print('The range is empty.')
+    else:
+        print('The range items are:', end=' ')
+        for itemRange in parRange:
+            print('{}'.format(itemRange), end=' ')
+
+if __name__=='__main__': main_8_6()
