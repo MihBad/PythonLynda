@@ -191,4 +191,30 @@ def print_range_86(parRange):
         for itemRange in parRange:
             print('{}'.format(itemRange), end=' ')
 
-if __name__=='__main__': main_8_6()
+# if __name__=='__main__': main_8_6()
+
+# --------------------------------------
+# chapter 9 lesson 1
+# Creating a Class
+
+def main_9_1():
+    # the code for chapter 9 lesson 1
+    donald = Duck_9_1() # creating the donald obj from the class
+    donald.quack() # call the function sound from donald obj
+    donald.move() # call the function move from the object donald
+
+class Duck_9_1:
+    sound = 'Quack quack.'
+    movement = 'Walks like a duck.'
+
+    def quack(self):
+        # define the quack method in the this class
+        # using the self to refer to the object
+        print(self.sound)
+    
+    def move(self):
+        # define the method for moving in this class
+        print(self.movement)
+
+if __name__=='__main__': main_9_1()
+
