@@ -223,10 +223,17 @@ class Duck_9_1:
 # Constructing an Object
 
 class Animal_9_2:
-    def __init__(self, type, name, sound):
-        self._type = type
-        self._name = name
-        self._sound = sound
+    # for the old branch ch9les2_exclusiveParameters we use the below code
+    #  def __init__(self, type, name, sound):
+    #     self._type = type
+    #     self._name = name
+    #     self._sound = sound
+
+    # for the new branch ch9les2_kwargsParameters we use the below code
+    def __init__(self, **kwargs):
+        self._type = kwargs['type'] if 'type' in kwargs else 'default_type'
+        self._name = kwargs['name'] if 'name' in kwargs else 'default_name'
+        self._sound = kwargs['sound'] if 'sound' in kwargs else 'default_sound'
 
     def type(self):
         return self._type
@@ -245,10 +252,14 @@ def print_animal_9_6(parAnimal):
 
 def main_9_2():
     # the code for the chapter 9 lesson 2
-    a0 = Animal_9_2('kitten', 'fluffy', 'rwar')
-    a1 = Animal_9_2('duck', 'donald', 'quack')
+    # a0 = Animal_9_2('kitten', 'fluffy', 'rwar') # excl. parameters
+    a0 = Animal_9_2(type='kitten', name='fluffy', sound='rwar')
+    # a1 = Animal_9_2('duck', 'donald', 'quack') # excl. parameters
+    a1 = Animal_9_2(type='duck', name='donald', sound='quack')
     print_animal_9_6(a0)
     print_animal_9_6(a1)
-    print_animal_9_6(Animal_9_2('velociraptor', 'veronica', 'hello'))
+    print_animal_9_6(Animal_9_2(type='velociraptor', name='veronica', sound='hello'))
+    print_animal_9_6(Animal_9_2())
+
 
 if __name__=='__main__': main_9_2()
