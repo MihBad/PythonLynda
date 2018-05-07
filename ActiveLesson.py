@@ -216,5 +216,39 @@ class Duck_9_1:
         # define the method for moving in this class
         print(self.movement)
 
-if __name__=='__main__': main_9_1()
+# if __name__=='__main__': main_9_1()
 
+# --------------------------------------
+# chapter 9 lesson 2
+# Constructing an Object
+
+class Animal_9_2:
+    def __init__(self, type, name, sound):
+        self._type = type
+        self._name = name
+        self._sound = sound
+
+    def type(self):
+        return self._type
+    
+    def name(self):
+        return self._name
+
+    def sound(self):
+        return self._sound
+
+def print_animal_9_6(parAnimal):
+    # print the object variables
+    if not isinstance(parAnimal, Animal_9_2):
+        raise TypeError('print_animal(): requires an Animal')
+    print('The {} is named "{}" and says {}'.format(parAnimal.type(), parAnimal.name(), parAnimal.sound()))
+
+def main_9_2():
+    # the code for the chapter 9 lesson 2
+    a0 = Animal_9_2('kitten', 'fluffy', 'rwar')
+    a1 = Animal_9_2('duck', 'donald', 'quack')
+    print_animal_9_6(a0)
+    print_animal_9_6(a1)
+    print_animal_9_6(Animal_9_2('velociraptor', 'veronica', 'hello'))
+
+if __name__=='__main__': main_9_2()
