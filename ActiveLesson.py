@@ -297,7 +297,7 @@ def print_animal_9_3(parAnimal):
         raise TypeError('print_animal(): requires an Animal')
     print('The {} is named "{}" and says {}'.format(parAnimal.type(), parAnimal.name(), parAnimal.sound()))
 
-def _str_(self.):
+def __str__(self.):
     return f'The {self.type ()} is named "{self.name()}" and says {self.sound()}'
 
 def main_9_3():
@@ -305,7 +305,10 @@ def main_9_3():
     a0 = Animal_9_3(type='kitten', name='fluffy', sound='rwar')
     a1 = Animal_9_3(type='duck', name='donald', sound='quack')
     a0.sound('bark')
-    print_animal_9_3(a0)
-    print_animal_9_3(a1)
+    # print_animal_9_3(a0)
+    print(a0)
+    # print_animal_9_3(a1)
+    print(a1)
+
 
 if __name__=='__main__': main_9_3()
