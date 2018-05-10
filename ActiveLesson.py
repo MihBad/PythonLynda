@@ -434,4 +434,49 @@ def main_9_5():
     print(a1)
     a0.kill("human")
     
-if __name__=='__main__': main_9_5()
+# if __name__=='__main__': main_9_5()
+
+# --------------------------------------
+# chapter 9 lesson 6
+# Iterator Objects
+
+class inclusive_range:
+    # this class will work as a RANGE but with including the last number (i.e. inclusive_range(5) will return 0 to 5 and not 0 to 4)
+    def __init__(self, *args):
+        numargs=len(args)
+        self._start=0
+        self._step=1
+
+        if numargs<1:
+            raise TypeError(f'Expected at least one argument, got {numargs}')
+        elif numargs==1:
+            self._stop=args[0]
+        elif numargs==2:
+            (self._start, self._stop)=args
+        elif numargs==3:
+            (self._start, self._stop, self._step)=args
+        else:
+            raise TypeError('expected at most 3 arguments, got {}'.format(numargs))
+
+        self._next=self._start
+
+    def __iter__(self):
+        # this makes this class an ITERATOR
+        return self
+    
+    def __next__(self):
+        # needed for the iterator
+        if self._next>self._stop:
+            raise StopIteration
+        else:
+            _r=self._next
+            self._next+=self._step
+            return _r
+
+def main_9_6():
+    for n in inclusive_range(0, 25, 5):
+        print(n, end =' ')
+    print()
+
+if __name__=='__main__': main_9_6()
+
