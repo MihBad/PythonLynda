@@ -505,4 +505,66 @@ def main_10_1():
     else:
         print('Good job! x = {}'.format(x))
 
-if __name__=='__main__': main_10_1()
+# if __name__=='__main__': main_10_1()
+
+
+# --------------------------------------
+# chapter 10 lesson 2
+# Reporting Errors
+
+def inclusive_range_10_2(*args):
+    # this inclusive range will be constructed as a generator not an iterator
+    """The function is returning a range of numbers, including the last number.
+    param debug=True/False, [start], stop, [step]
+    """
+    if isinstance(args[0], bool):
+        if args[0]==True:
+            print('_____debug: running in debug mode.')
+        elif args[0]==False:
+            print('_____debug: running in non-debug mode.')
+    else:
+        raise TypeError('The first argument of the function needs to be True or False. True for debug info.')
+
+    numargs=len(args)
+    start = 0
+    step = 1
+
+    # initialize parameters
+    if numargs<=1:
+        raise TypeError('This function needs between 2 and 4 arguments. The function recieved {} arguments'.format(numargs))
+    if numargs==2:
+        stop=args[1]
+        if args[0]==True:
+            print('_____debug: <<initializing parameters>> stop={}'.format(stop))
+    elif numargs==3:
+        start=args[1]
+        stop=args[2]
+        if args[0]==True:
+            print('_____debug: <<initializing parameters>> start={}, stop=={}'.format(start, stop))
+    elif numargs==4:
+        start=args[1]
+        stop=args[2]
+        step=args[3]
+        if args[0]==True:
+            print('_____debug: <<initializing parameters>> start={}, stop={}, step={}'.format(start, stop, step))
+    else:
+        raise TypeError('This function needs between 2 and 4 arguments. The function recieved {} arguments.'.format(numargs))
+
+    # generator
+    i = start
+    while i<=stop:
+        yield i
+        i+=step
+
+def main_10_2():
+    # the start code of the lesson 2 in chapter 10
+    try:
+        x=inclusive_range_10_2(False, 0, 5, 1, 5) # OPT1 --- no arguments; should raise an error
+        for i in x:
+            print(i, end=' ')
+        print()
+    except TypeError as e:
+        print('ERROR: >>> {}'.format(e))
+
+if __name__=='__main__': main_10_2()
+
