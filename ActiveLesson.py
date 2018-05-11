@@ -3,6 +3,12 @@
 # learning the basics of the Python from Lynda (lynda.com)
 # also learning git
 
+import sys
+
+print('\n'*3)
+print('--- code starts here ---> ')
+
+
 # --------------------------------------
 # chapter 8 lesson 1
 # Basic Data Structures
@@ -478,5 +484,25 @@ def main_9_6():
         print(n, end =' ')
     print()
 
-if __name__=='__main__': main_9_6()
+# if __name__=='__main__': main_9_6()
 
+
+
+# --------------------------------------
+# chapter 10 lesson 1
+# Handling Exceptions
+
+def main_10_1():
+    # code for chapter 10 lesson 1
+    try:
+        x = 5/0
+    except ValueError:
+        print('I caught a ValueError')
+    # except ZeroDivisionError:
+    #     print('You can\'t divide by zero.')
+    except:
+        print('general error: {}'.format(sys.exc_info()[1]))
+    else:
+        print('Good job! x = {}'.format(x))
+
+if __name__=='__main__': main_10_1()
