@@ -566,5 +566,46 @@ def main_10_2():
     except TypeError as e:
         print('ERROR: >>> {}'.format(e))
 
-if __name__=='__main__': main_10_2()
+# if __name__=='__main__': main_10_2()
 
+# --------------------------------------
+# chapter 11 lesson 1
+# Overview of String Objects
+
+def main_11_1():
+    s = MyString('Hello World!')
+    print(s)
+
+class MyString(str):
+    def __str__(self):
+        return self[::-1]
+
+# if __name__=='__main__': main_11_1()
+
+# --------------------------------------
+# chapter 11 lesson 2
+# Common String Methods
+
+def main_11_2():
+    # the code for lesson 2 in chapter 11
+    print('Hello, World!') # initial code
+    print('Hello, World!'.upper()) # using the upper method on a string
+    print('Hello, World!'.lower()) # using the lower method on string
+    print('Hello, World!'.capitalize()) # capitalizing a string
+    print('hello, world!'.title()) # convert a string to title case
+    print('Hello, World!'.swapcase()) # some fun :)
+    print('Hello, World! ß'.casefold()) # removes all case distinctions, even in unicode
+
+    # diffferent object IDs = strings are imutable
+    s1 = 'Hello, World!'
+    s2 = s1.upper()
+    print(id(s1))
+    print(id(s2))
+
+    # using the concatenate operator
+    s1_2='Hello, World!'
+    s2_2='This is another string.'
+    s3_2='this is string 1' ' ' 'this is string 2'
+    print(s1_2 + ' ' + s2_2)
+    print(s3_2)
+if __name__=='__main__': main_11_2()
