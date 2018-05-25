@@ -636,4 +636,17 @@ def main_11_4():
     s2 = ' '.join(l) 
     print(s2)
 
-if __name__=='__main__': main_11_4()
+# if __name__=='__main__': main_11_4()
+
+# --------------------------------------
+# chapter 12 lesson 1
+# Opening Files
+
+def main_12_1():
+    # code for the chapter 12 lesson 1
+    f = open('lines.txt')
+    for line in f:
+        print(line.rstrip()) # rstrip - deletes the new lines at the end of a line
+        # print(line) # line without \n CrLf stripping
+
+if __name__=='__main__': main_12_1()
