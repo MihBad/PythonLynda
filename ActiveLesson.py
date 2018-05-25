@@ -608,4 +608,18 @@ def main_11_2():
     s3_2='this is string 1' ' ' 'this is string 2'
     print(s1_2 + ' ' + s2_2)
     print(s3_2)
-if __name__=='__main__': main_11_2()
+# if __name__=='__main__': main_11_2()
+
+# --------------------------------------
+# chapter 11 lesson 3
+# Formatting Strings
+
+def main_11_3():
+    # code for the lesson 3 in chapter 11
+    x=42 * 747 * 1000
+    y=73
+    print('the number is {0} {1}'.format(x, y)) # format with 2 numbers
+    print('the number is {:,.3f}'.format(x)) # customer format of numbers
+    print(f'the number is {x:,}')
+
+if __name__=='__main__': main_11_3()
