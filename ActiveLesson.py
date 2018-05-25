@@ -622,4 +622,18 @@ def main_11_3():
     print('the number is {:,.3f}'.format(x)) # customer format of numbers
     print(f'the number is {x:,}')
 
-if __name__=='__main__': main_11_3()
+# if __name__=='__main__': main_11_3()
+
+# --------------------------------------
+# chapter 11 lesson 4
+# Splitting and joining
+
+def main_11_4():
+    # code for the chapter 11 lesson 4
+    s = 'This is a long string with a bunch of words in it.'
+    # print(s.split())
+    l = s.split()
+    s2 = ' '.join(l) 
+    print(s2)
+
+if __name__=='__main__': main_11_4()
