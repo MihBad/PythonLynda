@@ -649,4 +649,16 @@ def main_12_1():
         print(line.rstrip()) # rstrip - deletes the new lines at the end of a line
         # print(line) # line without \n CrLf stripping
 
-if __name__=='__main__': main_12_1()
+# if __name__=='__main__': main_12_1()
+
+# --------------------------------------
+# chapter 12 lesson 2
+# Text vs. Binary Files
+
+def main_12_2():
+    # code for the lesson 2 in chapter 12
+    x = 'String\n' # line feed / carriage return
+    print(x)
+
+if __name__=='__main__': main_12_2()
+
