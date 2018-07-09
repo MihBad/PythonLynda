@@ -1,6 +1,8 @@
 
 # python and github
 # learning the basics of the Python from Lynda (lynda.com)
+# official name: Python Essential Training with Bill Weinman
+# https://www.linkedin.com/learning/python-essential-training-2
 # also learning git
 
 import sys
