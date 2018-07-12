@@ -4,6 +4,7 @@
 # official name: Python Essential Training with Bill Weinman
 # https://www.linkedin.com/learning/python-essential-training-2
 # also learning git
+# Martin arrived
 
 import sys
 
